@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>AnwarSchool - حول التطبيق</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="about-container">
+        <!-- زر الرجوع في الهيدر -->
+        <div class="header">
+            <button class="back-btn" onclick="goBack()" aria-label="رجوع">→</button>
+            <h1>AnwarSchool</h1>
+        </div>
+        
+        <!-- قائمة المحتويات -->
+        <div class="content-list">
+            <div class="list-item" onclick="showDetail('الاصدار', 'version')">
+                <span>الإصدار</span>
+                <i class="arrow-icon">›</i>
+            </div>
+            <div class="list-item" onclick="showDetail('سياسة الخصوصية', 'privacy')">
+                <span>سياسة الخصوصية</span>
+                <i class="arrow-icon">›</i>
+            </div>
+            <div class="list-item" onclick="showDetail('بنود الخدمة', 'terms')">
+                <span>بنود الخدمة</span>
+                <i class="arrow-icon">›</i>
+            </div>
+            <div class="list-item" onclick="showDetail('التراخيص', 'licenses')">
+                <span>التراخيص</span>
+                <i class="arrow-icon">›</i>
+            </div>
+        </div>
+    </div>
+
+    <!-- النافذة المنبثقة -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeModal()" aria-label="إغلاق">✕</span>
+                <h2 id="modalTitle">AnwarSchool</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- المحتوى يظهر هنا -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./about.js"></script>
+</body>
+</html>
