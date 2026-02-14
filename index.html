@@ -58,18 +58,28 @@
 
 <script>
 async function closeMe() {
-    // لو إحنا جوه تطبيق أندرويد باستخدام كابستور
-    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Browser) {
-        await window.Capacitor.Plugins.Browser.close();
-    } else {
-        // لو فاتح من متصفح عادي
-        window.close();
-    }
+    // 1. محاولة إغلاق النافذة (ستنجح في بعض المتصفحات الداخلية)
+    window.close();
+
+    // 2. إذا لم تغلق، سنحاول العودة للخلف في التاريخ
+    // في أندرويد، العودة للخلف عند أول صفحة في الـ Tab تؤدي لإغلاقه
+    setTimeout(() => {
+        window.history.back();
+    }, 100);
+
+    // 3. كحل أخير للمتصفحات العنيدة:
+    // إذا مرت 500 مل ثانية ولم تغلق الصفحة، فهذا يعني أننا بحاجة لإخبار المستخدم
+    setTimeout(() => {
+        if (!document.hidden) {
+            alert("يرجى استخدام زر الرجوع في أعلى الشاشة أو في هاتفك للعودة للتطبيق.");
+        }
+    }, 500);
 }
 </script>
 </body>
 
 </html>
+
 
 
 
