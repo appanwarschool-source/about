@@ -51,10 +51,27 @@
     </div>
 
     <script src="./about.js"></script>
+<div style="text-align: center; margin-top: 30px;">
+    <button onclick="closeMe()" style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        العودة للتطبيق
+    </button>
+</div>
 
+<script>
+async function closeMe() {
+    // لو إحنا جوه تطبيق أندرويد باستخدام كابستور
+    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Browser) {
+        await window.Capacitor.Plugins.Browser.close();
+    } else {
+        // لو فاتح من متصفح عادي
+        window.close();
+    }
+}
+</script>
 </body>
 
 </html>
+
 
 
 
