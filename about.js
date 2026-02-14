@@ -199,15 +199,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// كود يتحط داخل الصفحة الخارجية (GitHub Page)
-async function closeMe() {
-    if (window.Capacitor) {
-        const { Browser } = await import('@capacitor/browser');
-        await Browser.close();
-    } else {
-        window.close();
-    }
-}
-window.closeMe = closeMe; // أضف هذا السطر لضمان عمل الزر في الـ HTML
 
 
