@@ -115,7 +115,16 @@
         أنور سكول - Anwar School © 2026
     </div>
 </div>
-
+<script>// كود يتحط داخل الصفحة الخارجية (GitHub Page)
+async function closeMe() {
+    if (window.Capacitor) {
+        const { Browser } = await import('@capacitor/browser');
+        await Browser.close();
+    } else {
+        window.close();
+    }
+}</script>
 </body>
 
 </html>
+
