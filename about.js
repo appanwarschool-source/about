@@ -208,5 +208,6 @@ async function closeMe() {
         window.close();
     }
 }
+window.closeMe = closeMe; // أضف هذا السطر لضمان عمل الزر في الـ HTML
 
 
